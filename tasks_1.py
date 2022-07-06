@@ -67,7 +67,7 @@ def task_4():
     def check(num:int):
         num = str(num)
         ls= list(num)
-        print(ls)
+        #print(ls)
         if len(ls)%2 == 0:
             
             for i in range(0, int(len(ls)/2)):
@@ -75,18 +75,45 @@ def task_4():
                     continue
                 else:
                     return False
+            return True
         else:
             for i in range(0, int((len(ls)-1)/2)):
                 if ls[i] == ls[len(ls)-1-i]:
                     continue
                 else:
                     return False
+            return True
         
     while True:
-        ask = a*b
-        kk = check(ask)
-        if kk == True:
-            return ask
+        for i in range(0,899):
+            b-=1
+            ask = a*b
+            kk = check(ask)
+            if kk == True:
+                return "{} * {} = {}".format(a,b,ask)
+        b=999
+        # print(a)
+        a-=1
+        if a<=99:
+            return "fail"
+        
+        # ask = a*b
+        # kk = check(ask)
+        # if kk == True:
+        #     return ask
+        # a-=1
+        # ask = a*b
+        # kk = check(ask)
+        # print(a)
+        # if kk == True:
+        #     return ask
+        # b-=1
+        # ask = a*b
+        # kk = check(ask)
+        # if kk == True:
+        #     return ask
+        # if a<=100:
+        #     return "fail"
         
         
         
